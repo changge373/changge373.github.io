@@ -19,17 +19,22 @@
   <meta name="author" content="l">
   <meta name="keywords" content="">
   
-    <meta name="description" content="#测试文本 ##这是一篇测试能否正常上传的文章">
+    <meta name="description" content="以buuctf题目：not the same 为例 进行惯例的file等检查 32位，静态连接，开启nx保护  使用ida32打开 找后门函数，找字符串“cat flag”，“&#x2F;bin&#x2F;sh”等 找需要调用的的函数（此题为printf） 可以发现这题有get secret函数，此函数直接将flag.txt赋值给变量fl4g，我们的目的就是调用printf打印fl4g  在mai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="全世界的小窝">
-<meta property="og:url" content="http://example.com/2025/12/06/text/index.html">
+<meta property="og:url" content="http://example.com/2025/12/16/ret2text%E5%81%9A%E9%A2%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E4%BE%8B%E9%A2%98/index.html">
 <meta property="og:site_name" content="全世界的小窝">
-<meta property="og:description" content="#测试文本 ##这是一篇测试能否正常上传的文章">
+<meta property="og:description" content="以buuctf题目：not the same 为例 进行惯例的file等检查 32位，静态连接，开启nx保护  使用ida32打开 找后门函数，找字符串“cat flag”，“&#x2F;bin&#x2F;sh”等 找需要调用的的函数（此题为printf） 可以发现这题有get secret函数，此函数直接将flag.txt赋值给变量fl4g，我们的目的就是调用printf打印fl4g  在mai">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-12-06T05:57:59.695Z">
-<meta property="article:modified_time" content="2025-12-06T05:57:59.856Z">
+<meta property="og:image" content="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20193523.png">
+<meta property="og:image" content="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20193620.png">
+<meta property="og:image" content="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20193901.png">
+<meta property="og:image" content="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20194200.png">
+<meta property="article:published_time" content="2025-12-16T11:46:44.652Z">
+<meta property="article:modified_time" content="2025-12-16T11:43:34.791Z">
 <meta property="article:author" content="l">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20193523.png">
   
   
   
@@ -210,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-06 13:57" pubdate>
-          2025年12月6日 下午
+        <time datetime="2025-12-16 19:46" pubdate>
+          2025年12月16日 晚上
         </time>
       </span>
     
@@ -222,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          19 字
+          296 字
         
       </span>
     
@@ -233,7 +238,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -275,8 +280,30 @@
             
               <div class="markdown-body">
                 
-                <p>#测试文本</p>
-<p>##这是一篇测试能否正常上传的文章</p>
+                <p>以buuctf题目：not the same 为例</p>
+<p>进行惯例的file等检查</p>
+<p>32位，静态连接，开启nx保护</p>
+<p><img src="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20193523.png" srcset="/img/loading.gif" lazyload></p>
+<p>使用ida32打开</p>
+<p>找后门函数，找字符串“cat flag”，“&#x2F;bin&#x2F;sh”等</p>
+<p>找需要调用的的函数（此题为printf）</p>
+<p>可以发现这题有get secret函数，此函数直接将flag.txt赋值给变量fl4g，我们的目的就是调用printf打印fl4g</p>
+<p><img src="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20193620.png" srcset="/img/loading.gif" lazyload></p>
+<p>在main函数中找到paydding&#x3D;0x2d</p>
+<p>双击变量拿到bss中fl4g的地址0x080ECA2D</p>
+<p>在出现printf的地方tex tview拿到地址0x080489E3</p>
+<p>在函数栏里alt+t搜索exit函数拿到地址0x0804E660</p>
+<p>差点忘了要先调用这个函数，不然不会打印到fl4g</p>
+<p>拿到后门函数的地址0x080489A0</p>
+<p><img src="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20193901.png" srcset="/img/loading.gif" lazyload></p>
+<p>构造payload&#x3D;b’a’*padding+backdoor+printf+exit+fl4g</p>
+<p>这里要先退出backdoor函数再传参</p>
+<p>由于这题没找到printf的地址（好像是动态什么的，对此存疑），所以学习导入本地文件来找printf的地址</p>
+<p><img src="file:///C:/Users/changan/Pictures/Screenshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-12-16%20194200.png" srcset="/img/loading.gif" lazyload></p>
+<p>64位题目的区别在于其前六个参数在寄存器上，所以要找到寄存器的地址并且先传参再调用printf函数</p>
+<p> <strong>ROPgadget –binary pwn1 –only “pop|ret|rdi”</strong></p>
+<p>#关于ret2shellcode</p>
+<p>经了解这种题目比较不常见，不进行深入学习，只做大致了解</p>
 
                 
               </div>
@@ -295,7 +322,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div></div>
-      <div>http://example.com/2025/12/06/text/</div>
+      <div>http://example.com/2025/12/16/ret2text做题流程及例题/</div>
     </div>
     <div class="license-meta">
       
@@ -307,7 +334,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月6日</div>
+          <div>2025年12月16日</div>
         </div>
       
       
@@ -339,18 +366,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/12/16/ret2text%E5%81%9A%E9%A2%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E4%BE%8B%E9%A2%98/" title="">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/12/06/hello-world/" title="Ciallo World">
-                        <span class="hidden-mobile">Ciallo World</span>
+                      <a href="/2025/12/06/text/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
