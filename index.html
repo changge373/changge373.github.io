@@ -229,15 +229,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/12/16/ret2text%E5%81%9A%E9%A2%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E4%BE%8B%E9%A2%98/" target="_self">
+        <a href="/2025/12/23/%E6%A0%88%E6%BA%A2%E5%87%BA%E9%87%8C%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98/" target="_self">
           
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/16/ret2text%E5%81%9A%E9%A2%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E4%BE%8B%E9%A2%98/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/23/%E6%A0%88%E6%BA%A2%E5%87%BA%E9%87%8C%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98/" target="_self">
         <div>
-          以buuctf题目：not the same 为例 进行惯例的file等检查 32位，静态连接，开启nx保护  使用ida32打开 找后门函数，找字符串“cat flag”，“&#x2F;bin&#x2F;sh”等 找需要调用的的函数（此题为printf） 可以发现这题有get secret函数，此函数直接将flag.txt赋值给变量fl4g，我们的目的就是调用printf打印fl4g  在mai
+          栈溢出里产生的问题此笔记用于整理栈溢出刷题中的思考和搜得的解答，有错误记得指正我 问1：如果将返回地址覆盖位后门函数的地址，那么在执行完后门函数后，程序接下来的流程会到哪里 1.后门函数用ret正常结束 结束后会从后门函数的栈帧顶部弹出返回地址（返回地址来源于payload），这种情况下会继续跳转到payload中指定的位置，这也是payload通常很多步骤的原因 2.后门函数中有exit（0）
         </div>
       </a>
 
@@ -245,8 +245,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2025-12-16 19:46" pubdate>
-              2025-12-16
+            <time datetime="2025-12-23 15:43" pubdate>
+              2025-12-23
             </time>
           </div>
         
@@ -262,15 +262,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/12/06/text/" target="_self">
+        <a href="/2025/12/23/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%AE%80%E5%8D%95%E5%8E%9F%E7%90%86%E5%8F%8A%E8%BF%90%E7%94%A8/" target="_self">
           
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/06/text/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/23/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%AE%80%E5%8D%95%E5%8E%9F%E7%90%86%E5%8F%8A%E8%BF%90%E7%94%A8/" target="_self">
         <div>
-          #测试文本 ##这是一篇测试能否正常上传的文章
+          关于格式化字符串的原理与运用在正常的printf函数里，%s等作为约定，明确告诉程序，下一个参数是字符串类型 例如： printf(“姓名：%s，年龄：%d”)； 在栈上的情况为： 栈顶+—————-+| 返回地址       |  ← printf执行完要回到这里+—————-+| “姓名：%s，年龄：%d” | ← 格式字符串地址（参数1）+—————-+| name的地址     | ← 参
         </div>
       </a>
 
@@ -278,8 +278,41 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2025-12-06 13:57" pubdate>
-              2025-12-06
+            <time datetime="2025-12-23 15:43" pubdate>
+              2025-12-23
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/12/16/ret2text%E5%81%9A%E9%A2%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E4%BE%8B%E9%A2%98/" target="_self">
+          
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/16/ret2text%E5%81%9A%E9%A2%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E4%BE%8B%E9%A2%98/" target="_self">
+        <div>
+          title：ret2text做题流程及例题以buuctf题目：not the same 为例进行惯例的file等检查 32位，静态连接，开启nx保护  使用ida32打开 找后门函数，找字符串“cat flag”，“&#x2F;bin&#x2F;sh”等 找需要调用的的函数（此题为printf） 可以发现这题有get secret函数，此函数直接将flag.txt赋值给变量fl4g，我们的目的就是
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-12-16 19:46" pubdate>
+              2025-12-16
             </time>
           </div>
         
